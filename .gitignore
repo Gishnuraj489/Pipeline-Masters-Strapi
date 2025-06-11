@@ -120,12 +120,9 @@ coverage
 ############################
 # Strapi
 ############################
-
-.env
-license.txt
-exports
-.strapi
-dist
+node_modules
 build
-.strapi-updater.json
-.strapi-cloud.json
+.cache
+.env
+Dockerfile*
+docker-compose*.yml
