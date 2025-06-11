@@ -13,8 +13,8 @@ services:
       DATABASE_PASSWORD: strapi_pass
       NODE_ENV: development
     volumes:
-      - ./your-strapi-app:/app
-      - /app/node_modules        # Avoid overwriting node_modules in container
+      - .:/app
+      - /app/node_modules
     ports:
       - "1337:1337"
     depends_on:
@@ -37,10 +37,10 @@ services:
   nginx:
     image: nginx:latest
     container_name: strapi-nginx-dev
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/custom.conf
     depends_on:
       - strapi
     networks:
