@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy rest of the code (optional for dev, but safe)
-COPY ./your-strapi-app .
+COPY . .
 
 EXPOSE 1337
 
